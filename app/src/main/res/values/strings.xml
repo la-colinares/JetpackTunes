@@ -1,3 +1,5 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Jetpack Tunes</string>
+    <string name="app_description">Enjoy listening music for free.</string>
+    <string name="search_music" tools:ignore="TypographyEllipsis">Search music...</string>
 </resources>

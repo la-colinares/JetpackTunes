@@ -86,7 +86,7 @@ class MainViewModel @Inject constructor(
                 // pick one random song from top world tracks
                 val suggestedSong = songs.shuffled().first()
                 _suggestedSongState.update {
-                    SuggestedSongState(loading = suggestedSong.title.isNotEmpty(), song = suggestedSong)
+                    SuggestedSongState(loading = suggestedSong.title.isEmpty(), song = suggestedSong)
                 }
 
                 _topWorldCharts.update { songs }
