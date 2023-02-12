@@ -96,8 +96,7 @@ dependencies {
     kapt 'com.google.dagger:hilt-compiler:2.45'
     implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
 
-    // Kotlin Json Serialization
-    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1'
+
 
     // Prefs Data Store
     implementation "androidx.datastore:datastore-preferences:1.0.0"

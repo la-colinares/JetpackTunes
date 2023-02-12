@@ -1,4 +1,4 @@
-package com.lacolinares.jetpacktunes.ui.theme
+package com.lacolinares.jetpacktunes.view.theme
 
 import androidx.compose.ui.graphics.Color
 
