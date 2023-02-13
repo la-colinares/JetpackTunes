@@ -75,7 +75,7 @@ fun HomeScreen(navigator: DestinationsNavigator, viewModel: MainViewModel) {
         sheetShape = RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp),
         backgroundColor = VampireBlack,
 
-    ) {
+        ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -86,11 +86,7 @@ fun HomeScreen(navigator: DestinationsNavigator, viewModel: MainViewModel) {
                 BackgroundImage(imageUrl = suggestedSong.song.backgroundImage)
             }
             Column(
-                modifier = Modifier.padding(
-                    top = 24.dp,
-                    start = 20.dp,
-                    end = 20.dp
-                )
+                modifier = Modifier.padding(top = 24.dp)
             ) {
                 HeaderItem()
                 VerticalSpace(24)
@@ -154,7 +150,9 @@ private fun MusicList(
     ) {
         Text(
             text = category,
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp),
             color = White,
             fontSize = 20.sp,
             fontStyle = FontStyle.Normal,
@@ -165,7 +163,8 @@ private fun MusicList(
         LazyRow(
             modifier = Modifier.fillMaxWidth(),
             state = rowState,
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            contentPadding = PaddingValues(horizontal = 20.dp),
         ) {
             items(songs, key = { it.key }) {
                 MusicCard(imageUrl = it.coverArt, title = it.title, subtitle = it.subtitle)
@@ -222,7 +221,9 @@ private fun MusicCard(
 @Composable
 private fun SuggestedSongItem(suggestedSong: Song = Song()) {
     Column(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         Text(
@@ -337,7 +338,9 @@ private fun BackgroundImage(imageUrl: String) {
 @Composable
 private fun HeaderItem() {
     Column(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -364,7 +367,9 @@ private fun HeaderItem() {
 private fun SearchItem() {
     Button(
         onClick = { },
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp),
         shape = RoundedCornerShape(50.dp),
         colors = ButtonDefaults.buttonColors(
             containerColor = EerieBlack,
