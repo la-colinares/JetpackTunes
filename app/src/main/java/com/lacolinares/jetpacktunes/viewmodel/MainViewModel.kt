@@ -53,7 +53,11 @@ class MainViewModel @Inject constructor(
         } else {
             SongListState(loading = true, songs = emptyList())
         }
-    }
+    }.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = SongListState()
+    )
 
     init {
         getTopWorldTracks()

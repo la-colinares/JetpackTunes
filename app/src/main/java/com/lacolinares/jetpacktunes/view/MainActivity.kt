@@ -2,6 +2,7 @@ package com.lacolinares.jetpacktunes.view
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
@@ -28,15 +29,23 @@ class MainActivity : ComponentActivity() {
         installSplashScreen()
         setContent {
             JetpackTunesTheme {
-                JetpackTunesApp(viewModel)
+                JetpackTunesApp(this, viewModel)
             }
         }
     }
 }
 
 @Composable
-fun JetpackTunesApp(viewModel: MainViewModel) {
+fun JetpackTunesApp(activity: MainActivity, viewModel: MainViewModel) {
     val navController = rememberNavController()
+
+    BackHandler {
+        val currentDestination: String = navController.currentDestination?.route ?: NavGraphs.root.startRoute.route
+        if (currentDestination == HomeScreenDestination.route){
+            activity.finish()
+        }
+    }
+
     Box(modifier = Modifier.fillMaxSize()) {
         DestinationsNavHost(
             navGraph = NavGraphs.root,

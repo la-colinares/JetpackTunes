@@ -2,4 +2,6 @@
     <string name="app_name">Jetpack Tunes</string>
     <string name="app_description">Enjoy listening music for free.</string>
     <string name="search_music" tools:ignore="TypographyEllipsis">Search music...</string>
+    <string name="play_now">Play Now</string>
+    <string name="follow">Follow</string>
 </resources>
